@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TobiiXR_Settings
   m_EditorClassIdentifier: 
   FieldOfUse: 2
-  EyeTrackingProviderTypeStandAlone: Tobii.XR.TobiiProvider
+  EyeTrackingProviderTypeStandAlone: Tobii.XR.MouseProvider
   EyeTrackingProviderTypeAndroid: Tobii.XR.NoseDirectionProvider
   LayerMask:
     serializedVersion: 2

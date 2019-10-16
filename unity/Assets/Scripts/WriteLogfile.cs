@@ -12,7 +12,13 @@ public class WriteLogfile : MonoBehaviour
     {
         
         print("WRITE FILE\n");
-        string path = @"..\logfile\eye_tracking_study_log_test_1.txt";
+
+        string path = "LOG/eye_tracking_study_log_test_1.txt";
+        if(!Directory.Exists("LOG/"))
+        {
+            Directory.CreateDirectory("LOG/");
+        }
+
         if (!File.Exists(path))
         {
             // Create file to write to

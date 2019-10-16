@@ -78,8 +78,8 @@ public class SelectionManager : MonoBehaviour
 
         
 
-        print("interval: " + interval + "; isDestroyed: " + isDestroyed);
-        print("errorCounter: " + errorCounter + "; errorTime: " + errorTime%60);
+        /*print("interval: " + interval + "; isDestroyed: " + isDestroyed);
+        print("errorCounter: " + errorCounter + "; errorTime: " + errorTime%60);*/
     }
 
     protected virtual void actionWhenDestroyed()

@@ -1,0 +1,12 @@
+person|scenario|selection-method|eyetracking|object|selectiontime|errortime|errorcounter
+1     |Szenario 1|normal        | off       |1     |1,526928s    |0s       |0
+1|Szenario 1|normal|off|2|1,526925s|0s|0
+1|Szenario 1|normal|off|3|7,66907s|4,105058s|7
+1|Szenario 1|normal|off|4|5,936625s|2,493331s|6
+1|Szenario 1|normal|off|5|1,526931s|0s|0
+1|Szenario 1|normal|off|1|1,527448s|0s|0
+1|Szenario 1|normal|off|2|1,527436s|0s|0
+1|Szenario 1|normal|off|3|3,206445s|0,2717734s|4
+1|Szenario 1|normal|off|4|3,325144s|0,7799128s|4
+1|Szenario 1|normal|off|5|2,460448s|0,5255861s|3
+1|Szenario 1|normal|off|1|1,52744s|0s|0
