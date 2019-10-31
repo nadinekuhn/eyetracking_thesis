@@ -8,6 +8,7 @@ public class LevelChanger : MonoBehaviour
 {
     public Animator animator;
     public Text textField;
+    public Image background;
     protected static int levelToLoad;
     public bool eyetrackingEnabled = false;
     public bool bubbleCursorEnabled = false;
@@ -22,12 +23,12 @@ public class LevelChanger : MonoBehaviour
         SpawnSelectableObject.isScenarioDone = false;
         
         int activeScene = SceneManager.GetActiveScene().buildIndex;
-        if (activeScene != 0) { 
-            textField.text = $"Szenario: {activeScene}\nSelektion mit " + (string) (eyetrackingEnabled ? "Eye-Tracking" : "Kopftracking") + (string)(bubbleCursorEnabled ? "+ Bubble Cursor" : ""); 
+     /*   if (activeScene != 0) { 
+            textField.text = $"Szenario {activeScene}"; 
         } else
         {
             textField.text = "Kalibrierung\nPositioniere das Headset und folge mit den Augen den roten Punkten";
-        }
+        }*/
     }
 
     // Update is called once per frame
@@ -40,7 +41,8 @@ public class LevelChanger : MonoBehaviour
 
         if(successfulCalibration)
         {
-            setTextfield("Kalibrierung erfolgreich!");
+            textField.text = "Kalibrierung erfolgreich!";
+            textField.enabled = true;
             successfulCalibration = false;
             //FadeToNextLevel();
         }
@@ -59,14 +61,26 @@ public class LevelChanger : MonoBehaviour
             case "3":
                 FadeToLevel(3);
                 break;
+            case "4":
+                FadeToLevel(4);
+                break;
+            case "5":
+                FadeToLevel(5);
+                break;
+            case "6":
+                FadeToLevel(6);
+                break;
+            case "e":
+                SceneManager.LoadScene(1);
+                break;
             case "x":
-                setTextfield("Wie schnell kam Dir die Selektion der Objekte vor?\n1-sehr langsam - 10-sehr schnell");
+                showTextfield("Wie schnell kam Dir die Selektion der Objekte vor?\n1-sehr langsam - 10-sehr schnell");
                 break;
             case "y":
-                setTextfield("Wie einfach/schwer fiel Dir die Selektion der Objekte?\n1-sehr einfach - 10-sehr schwer");
+                showTextfield("Wie einfach/schwer fiel Dir die Selektion der Objekte?\n1-sehr einfach - 10-sehr schwer");
                 break;
             case "z":
-                setTextfield("Fühltest Du Dich zu irgendeiner Zeit frustriert?\n1-gar nicht - 10-sehr frustriert");
+                showTextfield("Fühltest Du Dich zu irgendeiner Zeit frustriert?\n1-gar nicht - 10-sehr frustriert");
                 break;
 
         }
@@ -108,10 +122,12 @@ public class LevelChanger : MonoBehaviour
         successfulCalibration = successful;
     }
 
-    public void setTextfield(string text)
+    public void showTextfield(string text)
     {
         textField.text = text;
-        textField.enabled = true;
+        textField.color = new Color(0.9f, 0.9f, 0.9f,1);
+        background.color = new Color(0.0f, 0.203536f, 0.227451f, 1);
+        animator.SetTrigger("ShowQuestion");
     }
 
 }

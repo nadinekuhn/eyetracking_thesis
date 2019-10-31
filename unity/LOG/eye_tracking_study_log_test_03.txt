@@ -1,0 +1,16 @@
+person|scenario|selection-method|eyetracking|object|selectiontime|errortime|errorcounter|object-position|start-time
+1|Szenario 1|normal|off|1|2,594855s|0,6529117s|5|(-19.0, 0.5, 55.0)|
+1|Szenario 1|normal|off|2|1,903389s|0,1163716s|2|(20.0, 6.0, 52.8)|
+1|Szenario 1|normal|off|3|3,206081s|0,4357738s|1|(4.0, -13.0, 60.0)|
+1|Szenario 1|normal|off|4|28,68237s|24,74786s|32|(-11.0, -6.0, 80.0)|
+1|Szenario 1|normal|off|5|3,864562s|1,531972s|4|(24.0, -20.5, 65.0)|
+1|Szenario 2|normal|off|1|1,528043s|0s|0|(-19.0, 0.5, 75.0)|
+1|Szenario 2|normal|off|2|2,810311s|0,7548703s|5|(20.0, 6.0, 72.8)|
+1|Szenario 2|normal|off|3|7,588655s|4,870421s|14|(4.0, -13.0, 80.0)|
+1|Szenario 2|normal|off|4|2,100103s|0,2518994s|3|(-11.0, -6.0, 100.0)|
+1|Szenario 2|normal|off|5|3,812975s|1,186069s|9|(24.0, -20.5, 85.0)|
+1|Szenario 3|normal|off|1|1,519377s|0s|0|(-19.0, 0.5, 65.0)|
+1|Szenario 3|normal|off|2|1,563798s|0,04798052s|1|(20.0, 6.0, 62.8)|
+1|Szenario 3|normal|off|3|2,569144s|0,5032524s|4|(4.0, -13.0, 70.0)|
+1|Szenario 3|normal|off|4|2,010448s|0,4465526s|2|(-11.0, -6.0, 90.0)|
+1|Szenario 3|normal|off|5|2,108598s|0,527999s|4|(24.0, -20.5, 75.0)|

@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Szenario 3.unity
     guid: e371c470b732c8748a901425d10cecad
+  - enabled: 0
+    path: Assets/Scenes/Szenario 1-2.unity
+    guid: 8b79d01c5bf08384fb409590e66cbbee
+  - enabled: 0
+    path: Assets/Scenes/Szenario 2-2.unity
+    guid: c10fca3ed6b3ccf479d54ed49298936c
+  - enabled: 0
+    path: Assets/Scenes/Szenario 3-2.unity
+    guid: 87209d49e5ed50642b79024c80fd0d33
   m_configObjects: {}

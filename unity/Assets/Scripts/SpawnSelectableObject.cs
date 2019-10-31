@@ -12,12 +12,14 @@ public class SpawnSelectableObject : MonoBehaviour
     protected static int numberOfSelection;
     public Vector3 size;
     public static bool isScenarioDone = false;
+    private static Vector3 finalPos;
 
-    protected Vector3[] position = new[] {new Vector3(3, -4, -5),
-                                        new Vector3(-3, 0.5f, -10),
-                                        new Vector3(-22, 6, -12.2f),
+    protected Vector3[] position = new[] {
+                                        new Vector3(-19, 0.5f, -10),
+                                        new Vector3(20, 6, -12.2f),
+                                        new Vector3(4, -13, -5),
                                         new Vector3(-11, -6, 15),
-                                        new Vector3(24, -0.5f, 0),
+                                        new Vector3(24, -20.5f, 0),
                                         };
 
     [SerializeField] private float min, max;
@@ -35,10 +37,10 @@ public class SpawnSelectableObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        print(successfulSelection);
         if (successfulSelection && numberOfSelection <= 4)
         {
-            if (SceneManager.GetActiveScene().name == "Szenario 1")
+            if (SceneManager.GetActiveScene().name == "Szenario 1" || SceneManager.GetActiveScene().name == "Szenario 1-2")
             {
                 size -= new Vector3(1.0f, 1.0f, 0);
             }
@@ -60,7 +62,7 @@ public class SpawnSelectableObject : MonoBehaviour
     {
         
        Vector3 pos = transform.position + position[vec];
-
+       setObjPosition(pos);
        selectableObjPrefab.transform.localScale = size;
        
        Instantiate(selectableObjPrefab, pos, Quaternion.identity, transform);
@@ -82,5 +84,15 @@ public class SpawnSelectableObject : MonoBehaviour
     public static bool getSuccessfulSelection()
     {
         return successfulSelection;
+    }
+
+    public static Vector3 getObjPosition()
+    {
+        return finalPos;
+    }
+
+    private void setObjPosition(Vector3 pos)
+    {
+        finalPos = pos;
     }
 }

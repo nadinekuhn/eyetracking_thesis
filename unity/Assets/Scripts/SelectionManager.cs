@@ -19,6 +19,9 @@ public class SelectionManager : MonoBehaviour
     private static int errorCounter = 0;
     private static float errorTime;
     private static float selectionTimer;
+    private static string startTime;
+    private static string endTime;
+
 
     // Selection Method
     public static string selectionMethod = "normal";
@@ -32,7 +35,9 @@ public class SelectionManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
+    {
+
+
         if (!isSelected && wasAlreadySelected)
         {
             interval = durationOfSelection;
@@ -43,9 +48,11 @@ public class SelectionManager : MonoBehaviour
                 isHit = false;
             }
         }
-       
+
         if (wasAlreadySelected)
         {
+            WriteLogfile.writeRealtimeFile(System.DateTime.Now.ToString());
+
             selectionTimer += Time.deltaTime;
 
             if (interval > 0)
@@ -55,10 +62,13 @@ public class SelectionManager : MonoBehaviour
             else
             {
                 isDestroyed = true;
-                GameObject.FindGameObjectWithTag("selectableObj").SetActive(false);
+                if (GameObject.FindGameObjectWithTag("selectableObj"))
+                {
+                    GameObject.FindGameObjectWithTag("selectableObj").SetActive(false);
+                }
             }
         }
-        
+
 
         if (isSelected)
         {
@@ -69,14 +79,17 @@ public class SelectionManager : MonoBehaviour
         if (isDestroyed)
         {
             WriteLogfile.writeToFile();
+            print("errorCounter:" + errorCounter);
+            print("errorTime:" + errorTime);
             errorCounter = 0;
             errorTime = 0;
             selectionTimer = 0;
             wasAlreadySelected = false;
+            endTime = System.DateTime.Now.ToString();
             actionWhenDestroyed();
         }
 
-        
+
 
         /*print("interval: " + interval + "; isDestroyed: " + isDestroyed);
         print("errorCounter: " + errorCounter + "; errorTime: " + errorTime%60);*/
@@ -84,11 +97,13 @@ public class SelectionManager : MonoBehaviour
 
     protected virtual void actionWhenDestroyed()
     {
-        
+
     }
 
-    public static void setWasAlreadySelected(bool selected) {
+    public static void setWasAlreadySelected(bool selected)
+    {
         wasAlreadySelected = selected;
+        startTime = System.DateTime.Now.ToString();
     }
 
     public static float getSelectionTimer()
@@ -96,13 +111,26 @@ public class SelectionManager : MonoBehaviour
         return selectionTimer;
     }
 
+    public static string getStartTime()
+    {
+        return startTime;
+    }
+
+    public static string getEndTime()
+    {
+        return endTime;
+    }
+
+
     public static float getErrorTimer()
     {
+        print("GET errorTime:" + errorTime);
         return errorTime;
     }
 
     public static int getErrorCount()
     {
+        print("GET errorCounter:" + errorCounter);
         return errorCounter;
     }
 
